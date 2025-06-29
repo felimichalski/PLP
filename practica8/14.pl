@@ -21,7 +21,7 @@ listaQueSuma(Suma, Long, [X|XS]) :-
     listaQueSuma(S1, L1, XS).
 
 % cuadradoMagico(+N, -XS)
-cuadradoMagico(N, XS):- cuadradoSemiMágico(N, XS), sumaColumna(0, XS, S), not((between(1, N, NColumna), sumaColumna(NColumna, XS, S2), S \= S2)).
+cuadradoMagico(N, XS):- cuadradoSemiMágico(N, XS), sumaColumna(0, XS, S), not((N1 is N - 1, between(1, N1, NColumna), sumaColumna(NColumna, XS, S2), S \= S2)).
 
 % sumaColumna(+NCol, +Matriz, -Suma)
 sumaColumna(N, M, S):- columna(N, M, C), sum_list(C, S).
